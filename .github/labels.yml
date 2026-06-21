@@ -1,0 +1,66 @@
+# Canonical label set for this repo.
+#
+# This file is the single source of truth for labels — don't create
+# labels by hand in the GitHub UI, edit this file instead. The
+# label-sync workflow (.github/workflows/labels.yml) applies it
+# automatically whenever this file changes on main.
+
+- name: "type: feature"
+  color: "0E8A16"
+  description: "New user-facing capability"
+
+- name: "type: bug"
+  color: "D73A4A"
+  description: "Regression or incorrect behaviour"
+
+- name: "type: refactor"
+  color: "1D76DB"
+  description: "Codebase cleanup or architectural change, no behaviour change"
+
+- name: "type: docs"
+  color: "0075CA"
+  description: "Documentation only"
+
+- name: "type: foundations"
+  color: "5319E7"
+  description: "Repo infrastructure, conventions, or config — not a user-facing feature"
+
+- name: "agent: ready"
+  color: "FBCA04"
+  description: "Fully scoped — safe for an AI agent to pick up without follow-up questions"
+
+- name: "needs-scoping"
+  color: "C5DEF5"
+  description: "Not yet ready for implementation — acceptance criteria still being written"
+
+- name: "area: frontend"
+  color: "BFD4F2"
+  description: "UI / component work"
+
+- name: "area: backend"
+  color: "BFD4F2"
+  description: "API routes, data model, server logic"
+
+- name: "area: booking"
+  color: "BFD4F2"
+  description: "Booking flow specifically"
+
+- name: "area: admin"
+  color: "BFD4F2"
+  description: "Admin dashboard / internal tooling"
+
+- name: "area: infra"
+  color: "BFD4F2"
+  description: "CI, deployment, tooling, dependencies"
+
+- name: "priority: p0"
+  color: "B60205"
+  description: "Blocker — nothing else should merge ahead of this"
+
+- name: "priority: p1"
+  color: "D93F0B"
+  description: "High priority"
+
+- name: "priority: p2"
+  color: "FEF2C0"
+  description: "Normal priority"

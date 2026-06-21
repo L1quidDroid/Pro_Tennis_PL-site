@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project Board
+    url: https://github.com/orgs/your-org/projects/1
+    about: View current work in progress and the MVP/Phase 2 backlog.
