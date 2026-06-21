@@ -9,9 +9,7 @@ import type { Config } from "tailwindcss";
  * this file rather than hardcoding hex values in components.
  */
 const config: Config = {
-  content: [
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -21,7 +19,7 @@ const config: Config = {
         gold: "#C9A227", // trophy accent — used sparingly for CTAs/highlights
         paper: "#F6F4EF", // warm off-white surface
         line: "#D8D2C4", // hairline rule / divider color
-        muted: "#6B7280",
+        muted: "#4B5563", // gray-600 — gray-500 fails WCAG AA contrast (4.39:1) on paper bg
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
