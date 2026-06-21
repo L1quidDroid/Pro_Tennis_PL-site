@@ -213,3 +213,5 @@ extend that file rather than hardcoding values in components. The
 palette (deep "match-night" ink, hard-court teal, trophy gold) and the
 `.string-grid` texture utility (a subtle strung-racquet grid motif) are
 the project's visual signature; see `src/app/globals.css`.
+
+This line was added by a throwaway PR to verify the CI/CD loop (branch protection, Vercel preview, required checks) end-to-end before real feature work begins.
