@@ -2,10 +2,11 @@ import Link from "next/link";
 
 import { siteConfig, navLinks } from "@/content/site";
 import { Button } from "@/components/ui/button";
+import { MobileNav } from "@/components/layout/mobile-nav";
 
 export function Header() {
   return (
-    <header className="border-b border-line bg-paper/95 backdrop-blur">
+    <header className="relative border-b border-line bg-paper/95 backdrop-blur">
       <div className="container-content flex h-16 items-center justify-between">
         <Link
           href="/"
@@ -14,11 +15,6 @@ export function Header() {
           {siteConfig.name}
         </Link>
 
-        {/*
-          TODO(issue): mobile nav disclosure menu is intentionally not
-          built in this starter. Fully-scoped issue body ready to file:
-          docs/planned-issues/001-mobile-navigation.md
-        */}
         <nav aria-label="Primary" className="hidden gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
@@ -31,9 +27,12 @@ export function Header() {
           ))}
         </nav>
 
-        <Button asChild size="sm" variant="gold">
-          <Link href="/booking">Book a Restring</Link>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" variant="gold">
+            <Link href="/booking">Book a Restring</Link>
+          </Button>
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
