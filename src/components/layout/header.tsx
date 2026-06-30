@@ -6,7 +6,7 @@ import { MobileNav } from "@/components/layout/mobile-nav";
 
 export function Header() {
   return (
-    <header className="relative border-b border-line bg-paper/95 backdrop-blur">
+    <header className="relative z-50 border-b border-line bg-paper/95 backdrop-blur">
       <div className="container-content flex h-16 items-center justify-between">
         <Link
           href="/"
@@ -20,7 +20,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink/80 transition-colors hover:text-court"
+              className="text-sm font-medium text-ink transition-colors hover:text-court"
             >
               {link.label}
             </Link>
