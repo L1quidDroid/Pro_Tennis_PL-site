@@ -8,13 +8,13 @@ import { MobileNav } from "@/components/layout/mobile-nav";
 export function Header() {
   return (
     <header className="relative z-50 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="container-content flex h-20 items-center justify-between">
+      <div className="container-content flex h-16 items-center justify-between sm:h-[4.5rem]">
         <Link
           href="/"
           aria-label={`${siteConfig.name} home`}
           className="shrink-0 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-court focus-visible:ring-offset-2"
         >
-          <Logo />
+          <Logo variant="mark" />
         </Link>
 
         <nav aria-label="Primary" className="hidden gap-6 md:flex">

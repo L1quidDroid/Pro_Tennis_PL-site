@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Logo } from "@/components/brand/logo";
 import { siteConfig } from "@/content/site";
 import { Button } from "@/components/ui/button";
 
@@ -8,8 +9,16 @@ export function Hero() {
     <section className="relative overflow-hidden border-b border-line">
       <div aria-hidden className="string-grid absolute inset-0" />
 
-      <div className="container-content relative py-24 md:py-32">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-court">
+      <div className="container-content relative py-20 md:py-28">
+        <Link
+          href="/"
+          aria-label={`${siteConfig.name} home`}
+          className="inline-block rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-court focus-visible:ring-offset-2"
+        >
+          <Logo variant="wordmark" className="h-24 sm:h-28 md:h-36 lg:h-40" />
+        </Link>
+
+        <p className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-court">
           Officially Certified Tour Stringer
         </p>
 
