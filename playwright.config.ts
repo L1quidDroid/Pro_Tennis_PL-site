@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 const baseURL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001";
-const webServerPort = new URL(baseURL).port || "3000";
+const webServerPort = new URL(baseURL).port || "3001";
 
 export default defineConfig({
   testDir: "./tests/e2e",
