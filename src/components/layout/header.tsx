@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Logo } from "@/components/brand/logo";
 import { siteConfig, navLinks } from "@/content/site";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/layout/mobile-nav";
@@ -10,9 +11,10 @@ export function Header() {
       <div className="container-content flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="font-display text-lg font-semibold tracking-tight text-ink"
+          aria-label={`${siteConfig.name} home`}
+          className="shrink-0 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-court focus-visible:ring-offset-2"
         >
-          {siteConfig.name}
+          <Logo />
         </Link>
 
         <nav aria-label="Primary" className="hidden gap-6 md:flex">
