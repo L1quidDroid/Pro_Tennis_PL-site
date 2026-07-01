@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono } from "next/font/google";
 
 import { siteConfig } from "@/content/site";
 import { Header } from "@/components/layout/header";
@@ -13,15 +13,13 @@ const display = Fraunces({
   display: "swap",
 });
 
-const body = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
+// Body / UI type uses the native system font stack (San Francisco on Apple,
+// Segoe UI on Windows, Roboto on Android) — the same approach Instagram and
+// most large apps take. No webfont to load; renders the OS UI font natively.
 
 const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -54,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en-AU" className={`${display.variable} ${mono.variable}`}>
       <body className="flex min-h-screen flex-col">
         {/* Skip link for keyboard/screen-reader users — required, not optional. */}
         <a
