@@ -13,16 +13,18 @@ export function Logo({ className, variant = "default" }: LogoProps) {
     <Image
       src="/logo/pinlay.svg"
       alt="PinLay"
-      width={120}
-      height={40}
-      className={cn("h-10 w-auto", className)}
+      width={200}
+      height={200}
+      className={cn("h-14 w-auto sm:h-16", className)}
       priority
     />
   );
 
   if (variant === "onDark") {
     return (
-      <span className="inline-flex rounded-xl bg-paper px-3 py-2">{image}</span>
+      <span className="inline-flex rounded-xl bg-paper px-4 py-2.5">
+        {image}
+      </span>
     );
   }
 

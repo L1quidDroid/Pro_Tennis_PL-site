@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t border-line bg-ink text-paper/80">
       <div className="container-content grid gap-10 py-12 md:grid-cols-3">
         <div>
-          <Logo variant="onDark" className="h-9" />
+          <Logo variant="onDark" />
           <p className="mt-3 text-sm">{siteConfig.tagline}</p>
         </div>
 

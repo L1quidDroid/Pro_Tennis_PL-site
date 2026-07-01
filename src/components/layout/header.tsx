@@ -8,7 +8,7 @@ import { MobileNav } from "@/components/layout/mobile-nav";
 export function Header() {
   return (
     <header className="relative z-50 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="container-content flex h-16 items-center justify-between">
+      <div className="container-content flex h-20 items-center justify-between">
         <Link
           href="/"
           aria-label={`${siteConfig.name} home`}
