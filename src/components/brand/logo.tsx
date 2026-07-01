@@ -18,8 +18,8 @@ export function Logo({ className, variant = "default" }: LogoProps) {
     <Image
       src="/logo/pinlay.svg"
       alt="PinLay"
-      width={1500}
-      height={1500}
+      width={1455}
+      height={990}
       className={cn(SIZE_PRESETS[variant], className)}
       priority={variant === "default" || variant === "hero"}
     />
