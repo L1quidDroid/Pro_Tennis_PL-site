@@ -6,13 +6,14 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: "html",
   use: {
-    baseURL: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001",
+    baseURL: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
     trace: "on-first-retry",
   },
   webServer: {
     command: "npm run dev",
-    url: "http://localhost:3001",
+    url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
 });
