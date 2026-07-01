@@ -15,7 +15,7 @@ export function Hero() {
           aria-label={`${siteConfig.name} home`}
           className="inline-block rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-court focus-visible:ring-offset-2"
         >
-          <Logo variant="wordmark" className="h-24 sm:h-28 md:h-36 lg:h-40" />
+          <Logo variant="hero" />
         </Link>
 
         <p className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-court">

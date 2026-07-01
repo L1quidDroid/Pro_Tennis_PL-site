@@ -14,7 +14,7 @@ export function Header() {
           aria-label={`${siteConfig.name} home`}
           className="shrink-0 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-court focus-visible:ring-offset-2"
         >
-          <Logo variant="mark" />
+          <Logo />
         </Link>
 
         <nav aria-label="Primary" className="hidden gap-6 md:flex">
