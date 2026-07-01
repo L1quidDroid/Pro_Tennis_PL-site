@@ -4,12 +4,11 @@ import { cn } from "@/lib/utils";
 type LogoProps = {
   className?: string;
   /** Shown on dark surfaces (footer) inside a light badge so the mark stays legible. */
-  variant?: "default" | "hero" | "onDark";
+  variant?: "default" | "onDark";
 };
 
 const SIZE_PRESETS: Record<NonNullable<LogoProps["variant"]>, string> = {
   default: "h-14 w-auto sm:h-16",
-  hero: "h-40 w-auto sm:h-48 md:h-56 lg:h-64",
   onDark: "h-16 w-auto sm:h-20",
 };
 
@@ -21,7 +20,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
       width={1455}
       height={990}
       className={cn(SIZE_PRESETS[variant], className)}
-      priority={variant === "default" || variant === "hero"}
+      priority={variant === "default"}
     />
   );
 
