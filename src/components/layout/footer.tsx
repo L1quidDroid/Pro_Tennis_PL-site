@@ -1,16 +1,15 @@
 import Link from "next/link";
 
+import { Logo } from "@/components/brand/logo";
 import { siteConfig } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-ink text-paper/80">
+    <footer className="rounded-t-[2rem] bg-ink text-paper/80 md:rounded-t-[2.75rem]">
       <div className="container-content grid gap-10 py-12 md:grid-cols-3">
         <div>
-          <p className="font-display text-lg font-semibold text-paper">
-            {siteConfig.name}
-          </p>
-          <p className="mt-2 text-sm">{siteConfig.tagline}</p>
+          <Logo variant="onDark" />
+          <p className="mt-3 text-sm">{siteConfig.tagline}</p>
         </div>
 
         <div className="text-sm">
