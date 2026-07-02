@@ -12,9 +12,7 @@ export function ServicesSection() {
     <section id="services" className="border-b border-line py-20 md:py-28">
       <div className="container-content">
         <Reveal>
-          <h2 className="font-display text-4xl font-semibold tracking-[-0.01em] text-ink md:text-5xl">
-            Services
-          </h2>
+          <h2 className="text-4xl text-ink md:text-5xl">Services</h2>
           <p className="mt-4 max-w-xl text-lg text-muted">
             Every restring is calibrated on precision machines and backed by
             tour-level judgement on tension and string choice.
@@ -35,9 +33,7 @@ export function ServicesSection() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="font-display text-2xl font-semibold text-ink">
-                    {service.title}
-                  </h3>
+                  <h3 className="text-2xl text-ink">{service.title}</h3>
                   <p className="mt-2 max-w-2xl leading-relaxed text-muted">
                     {service.description}
                   </p>

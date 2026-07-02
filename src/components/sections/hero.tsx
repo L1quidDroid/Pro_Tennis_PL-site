@@ -55,7 +55,7 @@ export function Hero() {
 
         <motion.h1
           variants={reduce ? undefined : item}
-          className="mt-6 max-w-3xl text-balance font-display text-[2.75rem] font-semibold leading-[1.04] tracking-[-0.02em] text-paper md:text-7xl"
+          className="mt-6 max-w-3xl text-[2.75rem] leading-[1.04] text-paper md:text-7xl"
         >
           {siteConfig.tagline}
         </motion.h1>

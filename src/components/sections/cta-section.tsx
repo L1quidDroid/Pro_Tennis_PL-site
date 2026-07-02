@@ -11,7 +11,7 @@ export function CtaSection() {
           <div aria-hidden className="string-grid-dark absolute inset-0" />
           <div className="relative flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="font-display text-3xl font-semibold tracking-[-0.01em] md:text-4xl">
+              <h2 className="text-3xl md:text-4xl">
                 Ready for your next restring?
               </h2>
               <p className="mt-3 max-w-md text-lg text-paper/85">

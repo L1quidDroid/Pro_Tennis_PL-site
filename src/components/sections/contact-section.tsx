@@ -12,9 +12,7 @@ export function ContactSection() {
     <section id="contact" className="py-20 md:py-28">
       <div className="container-content">
         <Reveal>
-          <h2 className="font-display text-4xl font-semibold tracking-[-0.01em] text-ink md:text-5xl">
-            Get in Touch
-          </h2>
+          <h2 className="text-4xl text-ink md:text-5xl">Get in Touch</h2>
           <p className="mt-4 max-w-xl text-lg text-muted">
             Questions about string choice, tension, or turnaround? Reach out
             directly.

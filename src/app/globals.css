@@ -4,8 +4,7 @@
 
 @layer base {
   :root {
-    --font-display: "Fraunces", serif;
-    --font-body: "Inter", sans-serif;
+    --font-display: "Montserrat", sans-serif;
     --font-mono: "IBM Plex Mono", monospace;
   }
 
@@ -13,10 +12,13 @@
     @apply bg-paper font-body text-ink antialiased;
   }
 
-  h1,
+  h1 {
+    @apply text-balance font-display font-extrabold tracking-tight;
+  }
+
   h2,
   h3 {
-    @apply font-display;
+    @apply font-display font-bold tracking-tight;
   }
 
   /* Visible keyboard focus everywhere — do not remove for aesthetics. */

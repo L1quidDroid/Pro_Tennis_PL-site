@@ -24,6 +24,13 @@ const serverEnvSchema = z.object({
   // features that use them are implemented (see planned issues).
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
   RESEND_API_KEY: z.string().min(1).optional(),
+  // The verified sender address transactional emails are sent from.
+  // Defaults to Resend's shared onboarding sender for local/dev use;
+  // set a verified domain address in production.
+  RESEND_FROM_EMAIL: z
+    .string()
+    .min(1)
+    .default("PRO Stringing <onboarding@resend.dev>"),
 });
 
 const publicEnvSchema = z.object({

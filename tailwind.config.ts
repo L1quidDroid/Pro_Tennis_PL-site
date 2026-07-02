@@ -22,7 +22,7 @@ const config: Config = {
         muted: "#5B6371", // secondary text — clears WCAG AA (4.5:1) on bg-paper
       },
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
+        display: ["var(--font-display)", "sans-serif"],
         // Native system UI stack (SF on Apple, Segoe UI on Windows, Roboto on
         // Android) — the Instagram/large-app approach. No webfont load.
         body: [

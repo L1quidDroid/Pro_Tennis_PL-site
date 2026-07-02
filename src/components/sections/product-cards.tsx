@@ -21,9 +21,7 @@ export function ProductsSection() {
     >
       <div className="container-content">
         <Reveal>
-          <h2 className="font-display text-4xl font-semibold tracking-[-0.01em] text-ink md:text-5xl">
-            Strings We Use
-          </h2>
+          <h2 className="text-4xl text-ink md:text-5xl">Strings We Use</h2>
           <p className="mt-4 max-w-xl text-lg text-muted">
             Premium strings from the brands trusted on tour. Price includes
             labour.

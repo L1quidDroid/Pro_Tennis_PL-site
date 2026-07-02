@@ -1,29 +1,25 @@
 import type { Metadata } from "next";
 
-import { PageIntro } from "@/components/sections/page-intro";
+import { BookingForm } from "@/components/sections/booking-form";
 
 export const metadata: Metadata = {
   title: "Book a Restring",
   description: "Book your tennis racquet restring online.",
 };
 
-/**
- * Placeholder route. The real booking form (date/time, service type,
- * string + tension fields, Zod validation, Resend email notification)
- * is fully scoped and ready to file as a GitHub Issue:
- * docs/planned-issues/002-booking-form.md
- *
- * Do not build booking logic directly in this file without filing that
- * issue first; implement against its acceptance criteria so the PR
- * stays scoped.
- */
 export default function BookingPage() {
   return (
-    <PageIntro title="Book a Restring">
-      <p>
-        Online booking is coming soon. In the meantime, contact us directly to
-        arrange a restring.
-      </p>
-    </PageIntro>
+    <div className="mx-auto w-full max-w-[80rem] px-6 py-20 md:px-8">
+      <div className="max-w-2xl">
+        <h1 className="text-3xl text-ink">Book a Restring</h1>
+        <p className="mt-4 text-ink/70">
+          Tell us about your racquet and how you like it strung. We&apos;ll
+          confirm your slot by email — usually within a few hours.
+        </p>
+      </div>
+      <div className="mt-10">
+        <BookingForm />
+      </div>
+    </div>
   );
 }

@@ -5,6 +5,7 @@
 brand
 
 > The live, in-progress surface is a marketing + booking site where design carries the brand impression (hero, services, trust, conversion to "Book a Restring").
+> Task surfaces within it (the booking form, contact form) are **product**-register islands - design serves the task there, even though the site around them is brand-led.
 > The roadmap (`docs/context.md`) grows this into a self-serve operations platform - admin dashboard, customer accounts, CMS. When working those app surfaces, override the register to `product` for that task. Brand is the default because it describes the primary surface shipping today.
 
 ## Users
@@ -37,6 +38,8 @@ Exacting, tour-grade, unshowy. The voice of a craftsman who has strung at the hi
 3. **Build the MVP for the end state.** Marketing/booking surfaces should anticipate persistence, payment, accounts, and CMS - content stays editable in one place, data shapes stay forward-compatible.
 4. **Quiet confidence beats flash.** Restraint here must read as premium and deliberate, never as timid or unfinished. Distinctive over safe.
 5. **Local, human, one pair of hands.** Trust and turnaround over scale. The brand is a Melbourne specialist, not a chain.
+6. **Precision as personality.** Tension in lbs, exact turnaround, calibrated machines - the craft is exact, so the UI should feel measured, not decorative.
+7. **Earned trust at the ask.** The booking form is the highest-stakes moment; every field and state should reassure, never introduce doubt.
 
 ## Accessibility & Inclusion
 
