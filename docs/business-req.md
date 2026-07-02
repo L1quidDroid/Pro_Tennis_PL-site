@@ -7,7 +7,7 @@
 > Tip: there are no wrong answers. "I don't know yet" or "let me think"
 > is a perfectly good answer — just note it down.
 
-_Date asked: ____________   Asked by: _____________
+_Date asked: ____________ Asked by: _____________
 
 ---
 
@@ -62,6 +62,7 @@ that something you want?
 
 **2.3 — What do you NEED to know from every customer?**
 When someone books, what must they tell you? For example:
+
 - Their name and phone number
 - What string they want
 - How tight they want it strung (the tension)
@@ -112,12 +113,12 @@ paid.)
 Here's what the website currently lists. Are these correct, and are the
 prices right? Cross out anything wrong and add anything missing.
 
-| String | Price | Correct? |
-|---|---|---|
-| Luxilon ALU Power 1.25 | $60 | |
-| Yonex Poly Tour Pro 1.25 | $50 | |
-| Babolat RPM 1.25 | $55 | |
-| Solinco Hyper G 1.25 | $50 | |
+| String                   | Price | Correct? |
+| ------------------------ | ----- | -------- |
+| Luxilon ALU Power 1.25   | $60   |          |
+| Yonex Poly Tour Pro 1.25 | $50   |          |
+| Babolat RPM 1.25         | $55   |          |
+| Solinco Hyper G 1.25     | $50   |          |
 
 > _Other strings you offer:_
 
@@ -144,8 +145,8 @@ pricing for regulars?
 ## 5. The website content
 
 **5.1 — Is your story right?**
-The website says: *"35 years of tour experience, 20 Grand Slam
-appearances, 3 Olympic Games."* Is all of that correct? Anything to add
+The website says: _"35 years of tour experience, 20 Grand Slam
+appearances, 3 Olympic Games."_ Is all of that correct? Anything to add
 or change?
 
 > _Answer:_
@@ -189,6 +190,7 @@ jobs, so they can re-order their usual setup in one click?
 
 **6.3 — Who will change things on the website?**
 When a price changes or you want to update some words, would you rather:
+
 - Do it yourself through a simple editing screen, or
 - Ring us and we change it for you?
 
@@ -223,7 +225,9 @@ tournament, etc.)
 ---
 
 ### Notes for us (not to ask)
+
 Map answers back to the open questions in [context.md](context.md):
+
 - 1.2 → mobile/on-site scope
 - 2.x → MVP booking form fields & notifications
 - 3.x → payment timing & provider

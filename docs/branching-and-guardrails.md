@@ -28,17 +28,17 @@ work item  →  feature/<slug>  →  PR  →  CI passes  →  review  →  merge
 > expected to relax as the project matures (e.g. small fixes, hotfixes,
 > and experiments may skip the formal issue). The durable rules are the
 > ones below: short-lived branches, PR + CI + review before `main`, and
-> staying in scope. Treat "an issue exists" as *recommended* for
+> staying in scope. Treat "an issue exists" as _recommended_ for
 > feature work, not a hard gate.
 
 ## 2. Branch types
 
-| Branch | Purpose | Lifetime | Merges into |
-|---|---|---|---|
-| `main` | Production. Always green, always deployable. | permanent | — |
-| `feature/<issue#>-short-description` | One scoped issue | **< 48 hours** | `main` |
-| `fix/<issue#>-short-description` | One bug fix | < 48 hours | `main` |
-| `chore/<issue#>-short-description` | Infra/config/deps (no user-facing change) | < 48 hours | `main` |
+| Branch                               | Purpose                                      | Lifetime       | Merges into |
+| ------------------------------------ | -------------------------------------------- | -------------- | ----------- |
+| `main`                               | Production. Always green, always deployable. | permanent      | —           |
+| `feature/<issue#>-short-description` | One scoped issue                             | **< 48 hours** | `main`      |
+| `fix/<issue#>-short-description`     | One bug fix                                  | < 48 hours     | `main`      |
+| `chore/<issue#>-short-description`   | Infra/config/deps (no user-facing change)    | < 48 hours     | `main`      |
 
 **Naming:** always lead with the issue number, e.g.
 `feature/002-booking-form`. The number ties the branch to the issue, PR,
@@ -55,10 +55,10 @@ from `main`. Long branches are the #1 source of painful merge conflicts.
    body is already in `docs/planned-issues/` — copy it into a real Issue,
    then delete the file in the PR that closes it. Small fixes/chores may
    proceed without a formal issue once the team agrees that's the norm.
-2. **One in progress per person.** Move the issue to *In Progress* on the
+2. **One in progress per person.** Move the issue to _In Progress_ on the
    board. Only one card per person there at a time.
 3. **Branch from latest `main`.** `git switch main && git pull && git
-   switch -c feature/<n>-slug`.
+switch -c feature/<n>-slug`.
 4. **Build + test.** Write the feature and its tests together. Run
    `npm run lint`, `npm run typecheck`, `npm test` locally before
    pushing (the pre-commit hook runs lint/format on staged files, but it
@@ -77,16 +77,16 @@ from `main`. Long branches are the #1 source of painful merge conflicts.
 
 These run without anyone remembering to trigger them:
 
-| Guardrail | File | What it blocks |
-|---|---|---|
-| **CI: lint, typecheck, unit tests, build** | `.github/workflows/ci.yml` | Broken or untyped code, build failures |
-| **CI: Playwright E2E + axe accessibility** | same file (`e2e` job) | Broken user flows, WCAG A/AA regressions |
-| **Pre-commit hook** | `.husky/pre-commit` → `lint-staged` | Unformatted/unlinted staged files locally |
-| **Env validation** | `src/lib/env.ts` (Zod) | App starting with a missing/invalid env var |
-| **Label sync** | `.github/workflows/labels.yml` + `labels.yml` | Ad-hoc hand-made labels drifting |
-| **Dependabot** | `.github/dependabot.yml` | Dependency rot (weekly grouped PRs) |
+| Guardrail                                  | File                                          | What it blocks                              |
+| ------------------------------------------ | --------------------------------------------- | ------------------------------------------- |
+| **CI: lint, typecheck, unit tests, build** | `.github/workflows/ci.yml`                    | Broken or untyped code, build failures      |
+| **CI: Playwright E2E + axe accessibility** | same file (`e2e` job)                         | Broken user flows, WCAG A/AA regressions    |
+| **Pre-commit hook**                        | `.husky/pre-commit` → `lint-staged`           | Unformatted/unlinted staged files locally   |
+| **Env validation**                         | `src/lib/env.ts` (Zod)                        | App starting with a missing/invalid env var |
+| **Label sync**                             | `.github/workflows/labels.yml` + `labels.yml` | Ad-hoc hand-made labels drifting            |
+| **Dependabot**                             | `.github/dependabot.yml`                      | Dependency rot (weekly grouped PRs)         |
 
-> ⚠️ **Important:** CI *exists* but does not *block merge* until you
+> ⚠️ **Important:** CI _exists_ but does not _block merge_ until you
 > mark it a **required status check** in branch protection. Until then
 > it's advisory. See §6 — this is the single most important thing
 > required from you.
@@ -112,7 +112,8 @@ These can only be done by someone with admin rights on the GitHub repo
 and the connected services. Do them once; they make every guardrail
 above actually bite.
 
-### 6.1 — Branch protection on `main`  ⭐ highest priority
+### 6.1 — Branch protection on `main` ⭐ highest priority
+
 GitHub → **Settings → Branches → Add branch protection rule**, branch
 name pattern `main`:
 
@@ -129,20 +130,23 @@ name pattern `main`:
 > forced to honour.
 
 ### 6.2 — GitHub Actions permissions for label sync
+
 GitHub → **Settings → Actions → General → Workflow permissions**:
+
 - [ ] Set to **Read and write permissions** (so the `labels.yml`
       workflow can create/update labels).
 
 ### 6.3 — Secrets & environment variables
+
 The app needs these (see `.env.example`). They live in **two places**:
 
-| Variable | Local (`.env.local`) | Vercel (Project → Settings → Environment Variables) | When needed |
-|---|---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | ✅ | ✅ (prod = real domain) | now |
-| `RESEND_API_KEY` | ✅ | ✅ | booking/contact forms (issues 002/003) |
-| `NEXT_PUBLIC_SUPABASE_URL` | ✅ | ✅ | Stage 2 persistence |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | ✅ | ✅ | Stage 2 persistence |
-| `SUPABASE_SERVICE_ROLE_KEY` | ✅ | ✅ (**never** expose client-side) | Stage 2 admin/server |
+| Variable                        | Local (`.env.local`) | Vercel (Project → Settings → Environment Variables) | When needed                            |
+| ------------------------------- | -------------------- | --------------------------------------------------- | -------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`          | ✅                   | ✅ (prod = real domain)                             | now                                    |
+| `RESEND_API_KEY`                | ✅                   | ✅                                                  | booking/contact forms (issues 002/003) |
+| `NEXT_PUBLIC_SUPABASE_URL`      | ✅                   | ✅                                                  | Stage 2 persistence                    |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | ✅                   | ✅                                                  | Stage 2 persistence                    |
+| `SUPABASE_SERVICE_ROLE_KEY`     | ✅                   | ✅ (**never** expose client-side)                   | Stage 2 admin/server                   |
 
 - [ ] Provide a **Resend API key** when the booking/contact forms start.
 - [ ] Provide **Supabase project keys** when Stage 2 begins.
@@ -151,17 +155,20 @@ The app needs these (see `.env.example`). They live in **two places**:
       `NEXT_PUBLIC_*` variable.
 
 ### 6.4 — Vercel connection
+
 - [ ] Confirm the repo is connected to a Vercel project with
       **preview deploys on PRs** and **production deploy on `main`**.
 - [ ] Set production env vars in Vercel (above), not just locally.
 
 ### 6.5 — Project board & labels
+
 - [ ] Create/confirm the Project board with columns: **Backlog → Ready
       for Agent → In Progress → Review/QA → Done**.
 - [ ] Confirm milestones exist: **MVP Core Launch** and **Phase 2
       Operational Scale**.
 
 ### 6.6 — Ongoing, from you (not one-time)
+
 - [ ] **Approve PRs** — you're the required reviewer; nothing merges
       without a human approval.
 - [ ] **Triage Dependabot PRs** weekly — auto-grouped minor/patch can be
@@ -172,7 +179,7 @@ The app needs these (see `.env.example`). They live in **two places**:
 
 ## 7. Release & version tagging
 
-Branches are how work *gets in*; **tags are how we mark what shipped**.
+Branches are how work _gets in_; **tags are how we mark what shipped**.
 Every meaningful release on `main` gets an annotated, immutable git tag
 so we can point at "exactly what the MVP launch was" or roll back to a
 known-good commit.
@@ -182,14 +189,15 @@ milestone tags for the two big stage gates.
 
 ### 7.1 — Versioning scheme
 
-| Phase | Version range | Meaning |
-|---|---|---|
-| Pre-MVP build-up | `v0.x.y` | Scaffold + features landing; not yet "launched". API/UX may change freely. |
-| **MVP Core Launch** | `v1.0.0` | First public release — the polished marketing + booking site. |
-| Post-MVP features | `v1.x.0` (minor), `v1.x.y` (patch) | New features = minor bump; bug fixes = patch bump. |
-| **Phase 2 Operational Scale** | `v2.0.0` | Self-serve operations: payments, accounts, admin dashboard, CMS. |
+| Phase                         | Version range                      | Meaning                                                                    |
+| ----------------------------- | ---------------------------------- | -------------------------------------------------------------------------- |
+| Pre-MVP build-up              | `v0.x.y`                           | Scaffold + features landing; not yet "launched". API/UX may change freely. |
+| **MVP Core Launch**           | `v1.0.0`                           | First public release — the polished marketing + booking site.              |
+| Post-MVP features             | `v1.x.0` (minor), `v1.x.y` (patch) | New features = minor bump; bug fixes = patch bump.                         |
+| **Phase 2 Operational Scale** | `v2.0.0`                           | Self-serve operations: payments, accounts, admin dashboard, CMS.           |
 
 Bump rules:
+
 - **MAJOR** — a stage gate / breaking change (`v1.0.0` MVP, `v2.0.0`
   Phase 2).
 - **MINOR** — a new user-facing feature shipped to `main`
@@ -201,14 +209,14 @@ Bump rules:
 Alongside the SemVer tag, add a human-readable milestone tag at each
 stage gate so non-developers can find them:
 
-| Milestone tag | Points at | Paired with |
-|---|---|---|
-| `mvp-launch` | The commit that is the live MVP | `v1.0.0` |
-| `phase2-launch` | First Phase 2 production release | `v2.0.0` |
+| Milestone tag   | Points at                        | Paired with |
+| --------------- | -------------------------------- | ----------- |
+| `mvp-launch`    | The commit that is the live MVP  | `v1.0.0`    |
+| `phase2-launch` | First Phase 2 production release | `v2.0.0`    |
 
 ### 7.3 — Per-feature tags (optional, lightweight)
 
-For tracing *which commit shipped a given feature* without a full
+For tracing _which commit shipped a given feature_ without a full
 version bump, an optional feature tag is allowed:
 
 ```
@@ -234,6 +242,7 @@ git push origin v1.0.0 mvp-launch
 ```
 
 Rules:
+
 - **Annotated tags only** (`-a` … `-m`), never lightweight — annotated
   tags carry author, date, and message and are what GitHub Releases use.
 - **Tag `main` only**, after the PR is merged and CI is green — never
@@ -270,6 +279,7 @@ RULE    one branch · one PR · < 48h · stay in scope · always deployable
 ---
 
 ### Related docs
+
 - `README.md` — full workflow narrative & stack
 - `CONTRIBUTING.md` — day-to-day contributor rules
 - `.github/copilot-instructions.md` — rules AI agents read automatically
