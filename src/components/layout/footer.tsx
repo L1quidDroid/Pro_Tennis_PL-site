@@ -5,7 +5,7 @@ import { siteConfig } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-ink text-paper/80">
+    <footer className="rounded-t-[2rem] bg-ink text-paper/80 md:rounded-t-[2.75rem]">
       <div className="container-content grid gap-10 py-12 md:grid-cols-3">
         <div>
           <Logo variant="onDark" />

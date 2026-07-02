@@ -1,24 +1,47 @@
 import { services } from "@/content/site";
-import { Card, CardTitle, CardDescription } from "@/components/ui/card";
+import { Reveal } from "@/components/motion/reveal";
 
+/**
+ * Services as an editorial menu rather than a card grid. Each offering is a
+ * numbered row separated by hairlines — a deliberate enumerated list, which
+ * also breaks the "two identical card grids" rhythm with the Strings section
+ * that follows. Rows reveal in a gentle stagger on scroll.
+ */
 export function ServicesSection() {
   return (
-    <section id="services" className="border-b border-line py-20">
+    <section id="services" className="border-b border-line py-20 md:py-28">
       <div className="container-content">
-        <h2 className="text-3xl text-ink">Services</h2>
-        <p className="mt-2 max-w-xl text-ink/70">
-          Every restring is calibrated on precision machines and backed by
-          tour-level judgement on tension and string choice.
-        </p>
+        <Reveal>
+          <h2 className="text-4xl text-ink md:text-5xl">Services</h2>
+          <p className="mt-4 max-w-xl text-lg text-muted">
+            Every restring is calibrated on precision machines and backed by
+            tour-level judgement on tension and string choice.
+          </p>
+        </Reveal>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
-            <Card key={service.id}>
-              <CardTitle>{service.title}</CardTitle>
-              <CardDescription>{service.description}</CardDescription>
-            </Card>
+        <ul className="mt-14 border-t border-line">
+          {services.map((service, index) => (
+            <li key={service.id} className="border-b border-line">
+              <Reveal
+                delay={index * 0.06}
+                className="grid gap-3 py-8 md:grid-cols-[5rem_1fr] md:gap-10"
+              >
+                <span
+                  aria-hidden
+                  className="font-mono text-sm font-medium text-court"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-2xl text-ink">{service.title}</h3>
+                  <p className="mt-2 max-w-2xl leading-relaxed text-muted">
+                    {service.description}
+                  </p>
+                </div>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

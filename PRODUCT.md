@@ -4,43 +4,47 @@
 
 brand
 
-Primary surface is a marketing site for a premium service business, so design carries the identity.
-Note: task surfaces within it (the booking form, contact form) are **product**-register islands - design serves the task there, even though the site around them is brand-led.
+> The live, in-progress surface is a marketing + booking site where design carries the brand impression (hero, services, trust, conversion to "Book a Restring").
+> Task surfaces within it (the booking form, contact form) are **product**-register islands - design serves the task there, even though the site around them is brand-led.
+> The roadmap (`docs/context.md`) grows this into a self-serve operations platform - admin dashboard, customer accounts, CMS. When working those app surfaces, override the register to `product` for that task. Brand is the default because it describes the primary surface shipping today.
 
 ## Users
 
-Competitive and club tennis players in Melbourne who care about how their racquet plays: string type, tension, turnaround.
-They arrive from search or word-of-mouth, often on mobile, deciding whether to trust a stringer with a racquet they rely on.
-The job to be done: book a restring with confidence, or reach out with a question, without friction.
+- **Player / customer** (primary): a Melbourne tennis player who needs a racquet restrung quickly with the right string and tension. Arrives on phone or desktop, often researching where to take a racquet before a match or tournament week. Cares about trust, turnaround (24-48h, same-day express), easy booking, and clear pricing.
+- **Returning customer**: wants to re-book their usual string/tension fast. Cares about saved preferences, history, speed. (Served fully in Stage 2 accounts; the MVP should not design them out.)
+- **Owner / stringer**: a 35-year tour stringer (20 Grand Slam appearances, 3 Olympic Games) who wants to run the business, not the website - see bookings at a glance, manage statuses, and edit content himself without a developer. (Stage 2 admin + CMS.)
 
 ## Product Purpose
 
-PRO Stringing sells tour-level racquet stringing led by a 35-year tour stringer (20 Grand Slam appearances, 3 Olympic Games).
-The site exists to convert that credibility into bookings and enquiries.
-Success = a player finishing the booking form and trusting that a real expert will handle their racquet.
+PRO Stringing is a Melbourne racquet-stringing service whose differentiator is **tour-level expertise**: precision tension, premium strings, fast turnaround, one expert pair of hands. The website's job today is to make that expertise legible to a player in seconds and convert them into a booking. Its job at maturity is to be the business's operating system - book, pay, track, and manage online - so the MVP must be built so it doesn't have to be torn out to get there (data shapes anticipate persistence and payment; copy lives in one CMS-ready place).
+
+Success for the brand surface: a first-time visitor trusts the expertise, understands the offer and price, and books without phoning - and the page never reads as a generic template.
 
 ## Brand Personality
 
-Expert, precise, understated. The confidence of someone who has strung for the best and does not need to shout about it.
-Three words: tour-grade, exacting, warm-professional.
-Emotional goal: reassurance at the moment of handing over a prized racquet - "this person knows exactly what they are doing."
+Exacting, tour-grade, unshowy. The voice of a craftsman who has strung at the highest level and doesn't need to shout about it - quiet confidence over flash, precision over hype, local and human over corporate scale. Emotionally the site should evoke **trust and competence** (you're handing your racquet to a real expert) with an undercurrent of **athletic edge** (match-night, hard-court, tournament stakes). Premium, not luxury-precious; confident, not loud.
 
 ## Anti-references
 
-- Generic SaaS form UI (Stripe-clone gray-on-white, no sense of place).
-- Loud fitness/sports-brand energy (neon gradients, aggressive caps, hype).
-- Cheap local-business template (clip-art, stock tennis photos, clutter).
+- **Generic SaaS / corporate template** - navy-and-white, stock business photos, hero-metric blocks, identical icon-heading-text card grids. The existing tokens deliberately reject "a generic SaaS palette" (`tailwind.config.ts`); the layout should reject the matching shape.
+- **Loud discount sport retailer** - big-box sporting-goods energy: red sale banners, clutter, price-shouting. This is a specialist, not a warehouse.
+- **Trendy AI-startup** - gradient meshes, glassmorphism, oversized emoji, gradient text. The 2023-25 startup costume.
+- **Cheap / amateur local business** - clip-art, default system fonts, inconsistent spacing. This rebuild exists to replace exactly that impression.
 
 ## Design Principles
 
-- **Precision as personality.** Tension in lbs, exact turnaround, calibrated machines - the craft is exact, so the UI should feel measured, not decorative.
-- **Earned trust at the ask.** The booking form is the highest-stakes moment; every field and state should reassure, never introduce doubt.
-- **One quiet motif.** The strung-racquet grid (`.string-grid`) is the single recurring tie back to the product; used sparingly, it does the identity work so the rest can stay calm.
-- **Expert confidence, not hand-holding.** Speak the player's language (string names, tension) without over-explaining.
+1. **Show the expertise, don't claim it.** Let real credentials (Grand Slams, Olympics, tour years, named tour strings) and visible precision carry trust. No empty superlatives.
+2. **Every brand surface earns the booking.** The page exists to move a player toward "Book a Restring." Conversion is the quiet throughline, never a hard sell.
+3. **Build the MVP for the end state.** Marketing/booking surfaces should anticipate persistence, payment, accounts, and CMS - content stays editable in one place, data shapes stay forward-compatible.
+4. **Quiet confidence beats flash.** Restraint here must read as premium and deliberate, never as timid or unfinished. Distinctive over safe.
+5. **Local, human, one pair of hands.** Trust and turnaround over scale. The brand is a Melbourne specialist, not a chain.
+6. **Precision as personality.** Tension in lbs, exact turnaround, calibrated machines - the craft is exact, so the UI should feel measured, not decorative.
+7. **Earned trust at the ask.** The booking form is the highest-stakes moment; every field and state should reassure, never introduce doubt.
 
 ## Accessibility & Inclusion
 
-WCAG AA minimum (4.5:1 body text), AAA where reachable - already a project standard.
-Visible keyboard focus everywhere (gold outline, never removed for aesthetics).
-Full `prefers-reduced-motion` support: any motion added must have a beautiful static alternative.
-Native, accessible form controls preferred over custom widgets.
+- **WCAG AA is the floor** (4.5:1 body text, 3:1 large text); prefer **AAA (7:1)** where the palette allows. Per `CLAUDE.md` and the `muted` token rationale, contrast is a hard requirement, not a nicety.
+- Placeholder and secondary text held to the same 4.5:1 bar - no decorative light-gray-on-paper.
+- Honor `prefers-reduced-motion` for any animation; provide a crossfade or instant fallback.
+- Interactive controls (nav disclosure, booking form) keep accessible names, visible focus, and keyboard operability (the mobile nav already wires `aria-expanded`, Escape-to-close, and route-change close).
+- Locale is `en_AU`.

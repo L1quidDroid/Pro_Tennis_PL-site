@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { PageIntro } from "@/components/sections/page-intro";
+
 export const metadata: Metadata = {
   title: "FAQ",
   description: "Frequently asked questions about our stringing service.",
@@ -11,11 +13,8 @@ export const metadata: Metadata = {
  */
 export default function FaqPage() {
   return (
-    <div className="container-content py-20">
-      <h1 className="text-3xl text-ink">FAQ</h1>
-      <p className="mt-4 max-w-xl text-ink/70">
-        Frequently asked questions will appear here.
-      </p>
-    </div>
+    <PageIntro title="FAQ">
+      <p>Frequently asked questions will appear here.</p>
+    </PageIntro>
   );
 }
