@@ -15,60 +15,58 @@ export const contentType = "image/png";
 
 export default function OpengraphImage() {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#0F1B2B",
-          position: "relative",
-        }}
-      >
-        {/*
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#221E25",
+        position: "relative",
+      }}
+    >
+      {/*
           Satori (the renderer behind next/og) only supports a subset of
           CSS — repeating-linear-gradient is NOT supported and fails the
           build silently producing a broken image route. Keep this
           layout to simple flex/solid-color/border primitives only.
         */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: 8,
-            backgroundColor: "#C9A227",
-          }}
-        />
-        <div
-          style={{
-            fontSize: 72,
-            fontWeight: 700,
-            color: "#C9A227",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          {siteConfig.name}
-        </div>
-        <div style={{ fontSize: 32, color: "#F6F4EF", marginTop: 16 }}>
-          {siteConfig.tagline}
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: 8,
-            backgroundColor: "#1C4E63",
-          }}
-        />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: 8,
+          backgroundColor: "#C9A227",
+        }}
+      />
+      <div
+        style={{
+          fontSize: 72,
+          fontWeight: 700,
+          color: "#C9A227",
+          letterSpacing: "-0.02em",
+        }}
+      >
+        {siteConfig.name}
       </div>
-    ),
+      <div style={{ fontSize: 32, color: "#FAF9F7", marginTop: 16 }}>
+        {siteConfig.tagline}
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: 8,
+          backgroundColor: "#1C4E63",
+        }}
+      />
+    </div>,
     { ...size },
   );
 }
