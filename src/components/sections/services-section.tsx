@@ -5,9 +5,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="border-b border-line py-20">
       <div className="container-content">
-        <h2 className="font-display text-3xl font-semibold text-ink">
-          Services
-        </h2>
+        <h2 className="text-3xl text-ink">Services</h2>
         <p className="mt-2 max-w-xl text-ink/70">
           Every restring is calibrated on precision machines and backed by
           tour-level judgement on tension and string choice.

@@ -11,9 +11,7 @@ export function ProductsSection() {
   return (
     <section id="products" className="border-b border-line bg-paper py-20">
       <div className="container-content">
-        <h2 className="font-display text-3xl font-semibold text-ink">
-          Strings We Use
-        </h2>
+        <h2 className="text-3xl text-ink">Strings We Use</h2>
         <p className="mt-2 max-w-xl text-ink/70">
           Premium strings from the brands trusted on tour. Price includes
           labour.

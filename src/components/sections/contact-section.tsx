@@ -10,9 +10,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-20">
       <div className="container-content">
-        <h2 className="font-display text-3xl font-semibold text-ink">
-          Get in Touch
-        </h2>
+        <h2 className="text-3xl text-ink">Get in Touch</h2>
         <p className="mt-2 max-w-xl text-ink/70">
           Questions about string choice, tension, or turnaround? Reach out
           directly.

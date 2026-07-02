@@ -79,7 +79,7 @@ export async function POST(request: Request) {
   const summaryRows: Array<[string, string]> = [
     ["Name", data.name],
     ["Email", data.email],
-    ["Phone", data.phone],
+    ["Phone", data.phone?.trim() ? data.phone : "—"],
     ["Preferred date", data.preferredDate],
     ["Service", service],
     ["String", data.stringChoice],

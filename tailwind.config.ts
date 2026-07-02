@@ -22,7 +22,7 @@ const config: Config = {
         muted: "#5B6371", // secondary text — darkened from #6B7280 to clear WCAG AA (4.5:1) on bg-paper
       },
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
+        display: ["var(--font-display)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },

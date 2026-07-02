@@ -77,6 +77,16 @@ describe("bookingSchema", () => {
     expect(result.success).toBe(false);
   });
 
+  it("treats phone as optional (empty string is allowed)", () => {
+    const result = bookingSchema.safeParse({ ...validInput, phone: "" });
+    expect(result.success).toBe(true);
+  });
+
+  it("still rejects a malformed phone when one is provided", () => {
+    const result = bookingSchema.safeParse({ ...validInput, phone: "abc" });
+    expect(result.success).toBe(false);
+  });
+
   it("treats notes as optional", () => {
     const { notes: _notes, ...withoutNotes } = validInput;
     const result = bookingSchema.safeParse(withoutNotes);

@@ -27,12 +27,18 @@ export const bookingSchema = z.object({
     .trim()
     .min(1, "Email is required")
     .email("Enter a valid email"),
+  // Optional: email is the confirmation channel, so requiring a phone
+  // only adds friction (research links a required phone to sharply higher
+  // abandonment). Validate the format only when one is actually given.
   phone: z
     .string()
     .trim()
-    .min(6, "Enter a valid phone number")
     .max(20)
-    .regex(/^[0-9+()\-\s]+$/, "Enter a valid phone number"),
+    .refine(
+      (v) => v === "" || (v.length >= 6 && /^[0-9+()\-\s]+$/.test(v)),
+      "Enter a valid phone number",
+    )
+    .optional(),
   preferredDate: z.string().min(1, "Choose a preferred date"),
   serviceType: z.enum(SERVICE_TYPES, {
     errorMap: () => ({ message: "Choose a service type" }),

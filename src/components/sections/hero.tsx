@@ -13,7 +13,7 @@ export function Hero() {
           Officially Certified Tour Stringer
         </p>
 
-        <h1 className="mt-6 max-w-2xl font-display text-4xl font-semibold leading-tight text-ink md:text-6xl">
+        <h1 className="mt-6 max-w-2xl text-4xl leading-tight text-ink md:text-6xl">
           {siteConfig.tagline}
         </h1>
 

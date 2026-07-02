@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Montserrat } from "next/font/google";
 
 import { siteConfig } from "@/content/site";
 import { Header } from "@/components/layout/header";
@@ -7,8 +7,10 @@ import { Footer } from "@/components/layout/footer";
 
 import "./globals.css";
 
-const display = Fraunces({
+/** Matches the bold geometric sans used for "PIN" in the PinLay logo. */
+const display = Montserrat({
   subsets: ["latin"],
+  weight: ["700", "800"],
   variable: "--font-display",
   display: "swap",
 });
@@ -54,7 +56,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html
+      lang="en-AU"
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
       <body className="flex min-h-screen flex-col">
         {/* Skip link for keyboard/screen-reader users — required, not optional. */}
         <a
